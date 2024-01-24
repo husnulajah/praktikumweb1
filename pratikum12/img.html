@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Picker</title>
+  <style>
+    #image-container {
+      margin-top: 20px;
+    }
+
+    #alert-box {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Image Picker</h1>
+
+  <label for="image-dropdown">Pilih Gambar:</label>
+  <select id="image-dropdown" onchange="displayImage()">
+    <option value="poto1.jpg">poto1</option>
+    <option value="poto3.jpg">poto3</option>
+    <option value="kucing.jpeg">kucing</option>
+    <option value="kucing2.jpg">kucing2</option>
+    <option value="kucing3.jpg">kucing3</option>
+    <option value="poto3.jpg">poto3</option>
+    <!-- Tambahkan lebih banyak gambar sesuai kebutuhan -->
+  </select>
+
+  <div id="image-container">
+    <img id="selected-image" src="" alt="Selected Image">
+  </div>
+
+  <div id="alert-box"></div>
+
+  <script>
+    function displayImage() {
+      var dropdown = document.getElementById('image-dropdown');
+      var selectedImage = document.getElementById('selected-image');
+      var alertBox = document.getElementById('alert-box');
+
+      var selectedOption = dropdown.options[dropdown.selectedIndex];
+      var selectedFileName = selectedOption.value;
+
+      // Tampilkan gambar sesuai dengan pilihan dropdown
+      selectedImage.src = selectedFileName;
+
+      // Tampilkan alert dengan informasi nama file gambar
+      alertBox.innerHTML = "Nama File Gambar: " + selectedFileName;
+      alertBox.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubah warna javascript</title>
+</head>
+<body id="body">
+    <button onclick="ubahWarna()">Ubah warna</button>
+
+    <script>
+        function ubahWarna(){
+            let body = document.getElementById('body');
+            let random = Math.round(Math.random() * 10);
+            console.log(random);
+
+            let colors = ['red', 'blue', 'yellow', 'grey', 'greend', 'peach', 'brown', 'orange', 'magenta', 'black']
+            body.style = "background-color:" + colors[random];
+        }
+    </script>
+</body>
+</html>
